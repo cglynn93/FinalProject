@@ -67,7 +67,9 @@ public class ViewEditDeleteProduct extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1366, 768));
         setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(1366, 768));
         addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentShown(java.awt.event.ComponentEvent evt) {
                 formComponentShown(evt);

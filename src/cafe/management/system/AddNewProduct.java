@@ -56,8 +56,11 @@ public class AddNewProduct extends javax.swing.JFrame {
         productCategory = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setLocation(new java.awt.Point(350, 134));
+        setBounds(new java.awt.Rectangle(0, 38, 1366, 768));
+        setLocation(new java.awt.Point(0, 38));
+        setMinimumSize(new java.awt.Dimension(1366, 768));
         setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(1366, 768));
         addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentShown(java.awt.event.ComponentEvent evt) {
                 formComponentShown(evt);
