@@ -149,13 +149,13 @@ public class Home extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        // show place order page
         setVisible(false);
         new PlaceOrder(email).setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        // log user out and display login page
         int a = JOptionPane.showConfirmDialog(null,"Do you really want to logout?","Message",JOptionPane.YES_NO_OPTION);
         if(a==0){
             setVisible(false);
@@ -164,12 +164,12 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+        // display bill page
         new ViewBill().setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
+        // exit system
         int a = JOptionPane.showConfirmDialog(null, "Do you really want to exit?", "Message", JOptionPane.YES_NO_OPTION);
         if (a == 0) {
             System.exit(0);
@@ -177,27 +177,27 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void btnViewEditDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewEditDeleteActionPerformed
-        // TODO add your handling code here:
+        // display view edit delete page
         new ViewEditDeleteProduct().setVisible(true);
     }//GEN-LAST:event_btnViewEditDeleteActionPerformed
 
     private void btnCategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCategoryActionPerformed
-        // TODO add your handling code here:
+        // display manage category page
         new ManageCategory().setVisible(true);
     }//GEN-LAST:event_btnCategoryActionPerformed
 
     private void btnNewProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewProductActionPerformed
-        // TODO add your handling code here:
+        // display add new product page
         new AddNewProduct().setVisible(true);
     }//GEN-LAST:event_btnNewProductActionPerformed
 
     private void btnVerifyUsersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerifyUsersActionPerformed
-        // TODO add your handling code here:
+        // display verify users page
         new VerifyUsers().setVisible(true);
     }//GEN-LAST:event_btnVerifyUsersActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+        // display change password page
         new ChangePassword().setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 

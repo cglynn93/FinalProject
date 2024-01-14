@@ -20,6 +20,8 @@ public class Login extends javax.swing.JFrame {
     /**
      * Creates new form Login
      */
+    
+    //methods 
     public Login() {
         initComponents();
         btnLogin.setEnabled(false);
@@ -149,7 +151,7 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        // TODO add your handling code here:
+        // fetch data from database and login user, if user not approved display admin approval message
         String email = loginEmail.getText();
         String password = loginPassword.getText();
         User user = null;
@@ -170,7 +172,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
-        // TODO add your handling code here:
+        // exit system
        int a =JOptionPane.showConfirmDialog(null, "Do you really want to exit?", "Select", JOptionPane.YES_NO_OPTION);
        if(a == 0){
            System.exit(0);
@@ -178,28 +180,28 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_btnExitActionPerformed
 
     private void loginEmailKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_loginEmailKeyReleased
-        // TODO add your handling code here:
+        // validate field
         validateFields();
     }//GEN-LAST:event_loginEmailKeyReleased
 
     private void loginPasswordKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_loginPasswordKeyReleased
-        // TODO add your handling code here:
+        // validate field
         validateFields();
     }//GEN-LAST:event_loginPasswordKeyReleased
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
-        // TODO add your handling code here:
+        // close
         clear(); 
     }//GEN-LAST:event_btnClearActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+        // display signup page
         setVisible(false);
         new Signup().setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        // display forgot password page
         setVisible(false);
         new ForgotPassword().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed

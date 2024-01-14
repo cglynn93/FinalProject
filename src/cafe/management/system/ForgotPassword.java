@@ -23,6 +23,9 @@ public class ForgotPassword extends javax.swing.JFrame {
     /**
      * Creates new form ForgotPassword
      */
+    
+    //methods
+    
     public ForgotPassword() {
         initComponents();
         btnSave.setEnabled(false);
@@ -204,7 +207,7 @@ public class ForgotPassword extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-        // TODO add your handling code here:
+        // update password
         String answer = forgotAnswer.getText();
         String newPassword = forgotNewPassword.getText();
         if(answer.equals(dbAnswer)){
@@ -218,33 +221,33 @@ public class ForgotPassword extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
+        // display login page
         setVisible(false);
         new Login().setVisible(true);
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void forgotEmailKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_forgotEmailKeyReleased
-        // TODO add your handling code here:
+        // validate field
         validateEmail();
     }//GEN-LAST:event_forgotEmailKeyReleased
 
     private void forgotSecurityQuestionKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_forgotSecurityQuestionKeyReleased
-        // TODO add your handling code here:
+        // validate field
         validateFields();
     }//GEN-LAST:event_forgotSecurityQuestionKeyReleased
 
     private void forgotAnswerKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_forgotAnswerKeyReleased
-        // TODO add your handling code here:
+        // validate field:
        validateFields();
     }//GEN-LAST:event_forgotAnswerKeyReleased
 
     private void forgotNewPasswordKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_forgotNewPasswordKeyReleased
-        // TODO add your handling code here:
+        // validate field
         validateFields();
     }//GEN-LAST:event_forgotNewPasswordKeyReleased
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
-        // TODO add your handling code here:
+        // exit system
         int a = JOptionPane.showConfirmDialog(null,"Do you really want to exit?", "Message", JOptionPane.YES_NO_OPTION);
         if(a == 0){
             System.exit(0);
@@ -252,12 +255,12 @@ public class ForgotPassword extends javax.swing.JFrame {
     }//GEN-LAST:event_btnExitActionPerformed
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
-        // TODO add your handling code here:
+        // close
         clear();
     }//GEN-LAST:event_btnClearActionPerformed
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
-        // TODO add your handling code here:
+        // search database for email and display security question 
         email = forgotEmail.getText();
         User user = null;
         user = UserDataAccessObject.getSecurityQuestion(email);
@@ -273,7 +276,7 @@ public class ForgotPassword extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSearchActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
+        // display signup page
         setVisible(false);
         new Signup().setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed

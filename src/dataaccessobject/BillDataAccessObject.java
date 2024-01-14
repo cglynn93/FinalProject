@@ -14,7 +14,7 @@ import java.util.ArrayList;
  * @author chloeglynn
  */
 public class BillDataAccessObject {
-    
+    //data access object to pull data from database
     public static String getId(){
         int id = 1;
         try{

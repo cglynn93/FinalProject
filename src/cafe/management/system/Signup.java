@@ -19,6 +19,9 @@ public class Signup extends javax.swing.JFrame {
     /**
      * Creates new form Signup
      */
+    
+    //methods
+    
     public Signup() {
         initComponents();
         btnSave.setEnabled(false);
@@ -216,21 +219,21 @@ public class Signup extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void signupNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signupNameActionPerformed
-        // TODO add your handling code here:
+      
     }//GEN-LAST:event_signupNameActionPerformed
 
     private void signupMobileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signupMobileActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_signupMobileActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+        // display login page
         setVisible(false);
         new Login().setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-        // TODO add your handling code here:
+        // save new user info to database
         User user = new User();
         user.setName(signupName.getText());
         user.setEmail(signupEmail.getText());
@@ -243,51 +246,50 @@ public class Signup extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
-        // TODO add your handling code here:
+        //clear fields
         clear();
     }//GEN-LAST:event_btnClearActionPerformed
 
     private void signupNameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_signupNameKeyReleased
-        // TODO add your handling code here:
+        // validate fields
         validateFields();
     }//GEN-LAST:event_signupNameKeyReleased
 
     private void signupEmailKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_signupEmailKeyReleased
-        // TODO add your handling code here:
+        // validate fields
         validateFields();
     }//GEN-LAST:event_signupEmailKeyReleased
 
     private void signupMobileKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_signupMobileKeyReleased
-        // TODO add your handling code here:
+        // validate fields
         validateFields();
     }//GEN-LAST:event_signupMobileKeyReleased
 
     private void signupPasswordKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_signupPasswordKeyReleased
-        // TODO add your handling code here:
+        // validate fields
         validateFields();
     }//GEN-LAST:event_signupPasswordKeyReleased
 
     private void signupQuestionKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_signupQuestionKeyReleased
-        // TODO add your handling code here:
+        //validate fields
         validateFields();
     }//GEN-LAST:event_signupQuestionKeyReleased
 
     private void signupAnswerKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_signupAnswerKeyReleased
-        // TODO add your handling code here:
+        // validate fields
         validateFields();
     }//GEN-LAST:event_signupAnswerKeyReleased
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        // display Forgot Password page
         setVisible(false);
         new ForgotPassword().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    
-    
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {
-        int a = JOptionPane.showConfirmDialog(null, "Are you sure you want to exit?","Select",JOptionPane.YES_NO_OPTION);
-        if(a==0){
+        //exit application
+        int a = JOptionPane.showConfirmDialog(null, "Do you really want to exit?", "Select", JOptionPane.YES_NO_OPTION);
+        if (a == 0) {
             System.exit(0);
         }
     }

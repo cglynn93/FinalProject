@@ -137,18 +137,18 @@ public class AddNewProduct extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void productNameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_productNameKeyReleased
-        // TODO add your handling code here:
+        //validate fields
          validateFields();
         
     }//GEN-LAST:event_productNameKeyReleased
 
     private void productPriceKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_productPriceKeyReleased
-        // TODO add your handling code here:
+       //validate fields
         validateFields();
     }//GEN-LAST:event_productPriceKeyReleased
 
     private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentShown
-        // TODO add your handling code here:
+       //add category to list
         ArrayList<Category> list = CategoryDataAccessObject.getAllRecords();
         Iterator<Category> itr = list.iterator();
         while(itr.hasNext()){
@@ -158,7 +158,7 @@ public class AddNewProduct extends javax.swing.JFrame {
     }//GEN-LAST:event_formComponentShown
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-        // TODO add your handling code here:
+        //save product
         Product product = new Product();
         product.setName(productName.getText());
         product.setCategory((String)productCategory.getSelectedItem());
@@ -169,13 +169,13 @@ public class AddNewProduct extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
-        // TODO add your handling code here:
+        // clear fields
         setVisible(false);
         new AddNewProduct().setVisible(true);
     }//GEN-LAST:event_btnClearActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        // close
         setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 

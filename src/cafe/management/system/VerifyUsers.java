@@ -21,6 +21,9 @@ public class VerifyUsers extends javax.swing.JFrame {
     /**
      * Creates new form VerifyUsers
      */
+    
+    //methods
+    
     public VerifyUsers() {
         initComponents();
     }
@@ -116,23 +119,23 @@ public class VerifyUsers extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentShown
-        // TODO add your handling code here:
+        // display all users who signed up available in database
         getAllRecords("");
     }//GEN-LAST:event_formComponentShown
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        // close
         setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void verifyEmailKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_verifyEmailKeyReleased
-        // TODO add your handling code here:
+        // search email addresses and display based on search
         String email = verifyEmail.getText();
         getAllRecords(email);
     }//GEN-LAST:event_verifyEmailKeyReleased
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
-        // TODO add your handling code here:
+        //change status 
         int index = jTable1.getSelectedRow();
         TableModel model = jTable1.getModel();
         String email = model.getValueAt(index, 2).toString();

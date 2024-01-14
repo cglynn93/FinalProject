@@ -22,6 +22,8 @@ public class ManageCategory extends javax.swing.JFrame {
     /**
      * Creates new form ManageCategory
      */
+    
+    //main methods
     public ManageCategory() {
         initComponents();
         btnSave.setEnabled(false);
@@ -141,12 +143,12 @@ public class ManageCategory extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void manageNameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_manageNameKeyReleased
-        // TODO add your handling code here:
+        // validate field
         validateFields();
     }//GEN-LAST:event_manageNameKeyReleased
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-        // TODO add your handling code here:
+        // create new category
         Category category = new Category();
         category.setName(manageName.getText());
         CategoryDataAccessObject.save(category);
@@ -155,7 +157,7 @@ public class ManageCategory extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentShown
-        // TODO add your handling code here:
+        // add new category to database
         DefaultTableModel dtm = (DefaultTableModel) jTable1.getModel();
         ArrayList<Category> list = CategoryDataAccessObject.getAllRecords();
         Iterator<Category> itr = list.iterator();
@@ -166,7 +168,7 @@ public class ManageCategory extends javax.swing.JFrame {
     }//GEN-LAST:event_formComponentShown
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
-        // TODO add your handling code here:
+        // display new category in table
         int index = jTable1.getSelectedRow();
         TableModel model = jTable1.getModel();
         String id = model.getValueAt(index, 0).toString();
@@ -180,13 +182,13 @@ public class ManageCategory extends javax.swing.JFrame {
     }//GEN-LAST:event_jTable1MouseClicked
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
-        // TODO add your handling code here:
+        // clear fields and display fresh page
         setVisible(false);
         new ManageCategory().setVisible(true);
     }//GEN-LAST:event_btnClearActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        // exit
         setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 

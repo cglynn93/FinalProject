@@ -17,6 +17,9 @@ public class ChangePassword extends javax.swing.JFrame {
     /**
      * Creates new form ChangePassword
      */
+    
+    //methods 
+    
     public ChangePassword() {
         initComponents();
     }
@@ -136,33 +139,33 @@ public class ChangePassword extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        // hide
         setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void passwordOldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_passwordOldKeyReleased
-        // TODO add your handling code here:
+        //validate field
         validateFields();
     }//GEN-LAST:event_passwordOldKeyReleased
 
     private void passwordNewKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_passwordNewKeyReleased
-        // TODO add your handling code here:
+        // validate field
         validateFields();
     }//GEN-LAST:event_passwordNewKeyReleased
 
     private void passwordConfirmKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_passwordConfirmKeyReleased
-        // TODO add your handling code here:
+        // validate field
         validateFields();
     }//GEN-LAST:event_passwordConfirmKeyReleased
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
-        // TODO add your handling code here:
+        // clear fields and reload change password
         setVisible(false);
         new ChangePassword(userEmail).setVisible(true);
     }//GEN-LAST:event_btnClearActionPerformed
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-        // TODO add your handling code here:
+        // update password
         String oldPassword = passwordOld.getText();
         String newPassword = passwordNew.getText();
         UserDataAccessObject.changePassword(userEmail, oldPassword, newPassword);

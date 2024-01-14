@@ -23,6 +23,9 @@ public class ViewBill extends javax.swing.JFrame {
     /**
      * Creates new form ViewBill
      */
+    
+    //methods
+    
     public ViewBill() {
         initComponents();
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
@@ -146,12 +149,12 @@ public class ViewBill extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        // close
         setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyReleased
-        // TODO add your handling code here:
+        // 
         tableDetails();
     }//GEN-LAST:event_jTextField1KeyReleased
 

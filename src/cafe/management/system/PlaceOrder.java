@@ -31,6 +31,8 @@ import java.io.File;
  *
  * @author chloeglynn
  */
+
+//main methods 
 public class PlaceOrder extends javax.swing.JFrame {
     public int billId = 1;
     public int grandTotal = 0;
@@ -46,7 +48,7 @@ public class PlaceOrder extends javax.swing.JFrame {
     public PlaceOrder() {
         initComponents();
     }
-    
+    //make buttons ineditable as info will populate based on selection
     public PlaceOrder(String email) {
         initComponents();
         orderProductName.setEditable(false);
@@ -58,7 +60,7 @@ public class PlaceOrder extends javax.swing.JFrame {
         tf.setEditable(false);
         userEmail = email;
     }
-    
+    //fetch categories available in database
     public void productNameByCategory(String category){
         DefaultTableModel dtm = (DefaultTableModel) jTable1.getModel();
         dtm.setRowCount(0);
@@ -70,6 +72,7 @@ public class PlaceOrder extends javax.swing.JFrame {
         }
     }
     
+    //fetch product names available in database
     public void filterProductByName(String name, String category){
         DefaultTableModel dtm = (DefaultTableModel) jTable1.getModel();
         dtm.setRowCount(0);
@@ -81,6 +84,7 @@ public class PlaceOrder extends javax.swing.JFrame {
         }
     }
     
+    //clear fields
     public void clearProductFields(){
         orderProductName.setText("");
         orderProductPrice.setText("");
@@ -89,6 +93,7 @@ public class PlaceOrder extends javax.swing.JFrame {
         btnAddToCart.setEnabled(false);
     }
     
+    //validate fields
     public void validateFields(){
         String customerName = orderName.getText();
         String customerMobileNumber = orderMobileNumber.getText();
@@ -346,13 +351,13 @@ public class PlaceOrder extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        // close and display home page
         setVisible(false);
         new Home(userEmail).setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentShown
-        // TODO add your handling code here:
+        
         billId = Integer.parseInt(BillDataAccessObject.getId());
         jLabel14.setText(BillDataAccessObject.getId());
         ArrayList<Category> list = CategoryDataAccessObject.getAllRecords();
@@ -366,14 +371,14 @@ public class PlaceOrder extends javax.swing.JFrame {
     }//GEN-LAST:event_formComponentShown
 
     private void orderSearchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_orderSearchKeyReleased
-        // TODO add your handling code here:
+        // search products by name
         String name = orderSearch.getText();
         String category = (String) jComboBox1.getSelectedItem();
         filterProductByName(name,category);
     }//GEN-LAST:event_orderSearchKeyReleased
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
-        // TODO add your handling code here:
+        // display products available in database in product table
         int index = jTable1.getSelectedRow();
         TableModel model = jTable1.getModel();
         String productName = model.getValueAt(index, 0).toString();
@@ -388,7 +393,7 @@ public class PlaceOrder extends javax.swing.JFrame {
     }//GEN-LAST:event_jTable1MouseClicked
 
     private void jSpinner1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSpinner1StateChanged
-        // TODO add your handling code here:
+        // allow user to select quantity of item 
         int quantity  = (Integer) jSpinner1.getValue();
         if(quantity<=1){
             jSpinner1.setValue(1);
@@ -400,14 +405,14 @@ public class PlaceOrder extends javax.swing.JFrame {
     }//GEN-LAST:event_jSpinner1StateChanged
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
+        // display categories in drop down list
         String category = (String) jComboBox1.getSelectedItem();
         productNameByCategory(category);
         
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void btnAddToCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddToCartActionPerformed
-        // TODO add your handling code here:
+        // add item(s) selected to cart
         String name = orderProductName.getText();
         String price = orderProductPrice.getText();
         String quantity = String.valueOf(jSpinner1.getValue());
@@ -421,27 +426,27 @@ public class PlaceOrder extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAddToCartActionPerformed
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
-        // TODO add your handling code here:
+        // clear fields
         clearProductFields();
     }//GEN-LAST:event_btnClearActionPerformed
 
     private void orderNameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_orderNameKeyReleased
-        // TODO add your handling code here:
+        // validate field
         validateFields();
     }//GEN-LAST:event_orderNameKeyReleased
 
     private void orderMobileNumberKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_orderMobileNumberKeyReleased
-        // TODO add your handling code here:
+        // validate field
         validateFields();
     }//GEN-LAST:event_orderMobileNumberKeyReleased
 
     private void orderEmailKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_orderEmailKeyReleased
-        // TODO add your handling code here:
+        // validate field
         validateFields();
     }//GEN-LAST:event_orderEmailKeyReleased
 
     private void btnGenerateBillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerateBillActionPerformed
-        // TODO add your handling code here:
+        // generate bill based on customer information entered and items added to cart
         String customerName = orderName.getText();
         String customerMobileNumber = orderMobileNumber.getText();
         String customerEmail = orderEmail.getText();
@@ -508,7 +513,7 @@ public class PlaceOrder extends javax.swing.JFrame {
     }//GEN-LAST:event_btnGenerateBillActionPerformed
 
     private void jTable2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable2MouseClicked
-        // TODO add your handling code here:
+        // when row clicked, ask user if they want to remove item and remove it when user clicks yes or leave it if clicks no
         int index = jTable2.getSelectedRow();
         int a = JOptionPane.showConfirmDialog(null,"Do you want to remove this product?", "Message", JOptionPane.YES_NO_OPTION);
         if(a==0){
